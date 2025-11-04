@@ -1,0 +1,56 @@
+{
+  "login": {
+    "title": "Login",
+    "username": "Username",
+    "password": "Password",
+    "button": "Login",
+    "registerLink": "Register",
+    "failed": "Login failed"
+  },
+  "register": {
+    "title": "Register",
+    "username": "Username",
+    "password": "Password",
+    "role": "Role",
+    "farmer": "Farmer",
+    "admin": "Admin",
+    "button": "Register",
+    "failed": "Registration failed"
+  },
+  "languageModal": {
+    "title": "Select Language",
+    "english": "English",
+    "urdu": "Urdu",
+    "select": "Select"
+  },
+  "adminDashboard": {
+    "title": "Admin Dashboard",
+    "item": "Item",
+    "price": "Price",
+    "region": "Region",
+    "addButton": "Add Data",
+    "delete": "Delete"
+  },
+  "farmerDashboard": {
+    "title": "Farmer Dashboard",
+    "marketData": "Market Data",
+    "priceTrends": "Price Trends",
+    "selectItem": "Select Item",
+    "weather": "Weather",
+    "temperature": "Temperature",
+    "humidity": "Humidity",
+    "advice": "Advice",
+    "forumLink": "Go to Forum"
+  },
+  "forum": {
+    "title": "Community Forum",
+    "postTitle": "Title",
+    "content": "Content",
+    "postButton": "Post",
+    "by": "By",
+    "viewComments": "View Comments",
+    "comments": "Comments",
+    "commentPlaceholder": "Comment",
+    "commentButton": "Comment"
+  }
+}

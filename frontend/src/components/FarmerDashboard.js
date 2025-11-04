@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
+import { useTranslation } from 'react-i18next';
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
@@ -10,6 +11,7 @@ const FarmerDashboard = () => {
   const [weather, setWeather] = useState({});
   const [advice, setAdvice] = useState('');
   const [selectedItem, setSelectedItem] = useState('');
+  const { t } = useTranslation();
   const token = localStorage.getItem('token');
 
   useEffect(() => {
@@ -56,7 +58,7 @@ const FarmerDashboard = () => {
     return {
       labels: itemData.map(d => new Date(d.date).toLocaleDateString()),
       datasets: [{
-        label: `${item} Price`,
+        label: `${item} ${t('farmerDashboard.price')}`,
         data: itemData.map(d => d.price),
         borderColor: 'rgba(75,192,192,1)',
         backgroundColor: 'rgba(75,192,192,0.2)',
@@ -66,15 +68,15 @@ const FarmerDashboard = () => {
 
   return (
     <div>
-      <h2>Farmer Dashboard</h2>
+      <h2>{t('farmerDashboard.title')}</h2>
       <div>
-        <h3>Market Data</h3>
+        <h3>{t('farmerDashboard.marketData')}</h3>
         <table>
           <thead>
             <tr>
-              <th>Item</th>
-              <th>Price</th>
-              <th>Region</th>
+              <th>{t('adminDashboard.item')}</th>
+              <th>{t('adminDashboard.price')}</th>
+              <th>{t('adminDashboard.region')}</th>
               <th>Date</th>
             </tr>
           </thead>
@@ -91,9 +93,9 @@ const FarmerDashboard = () => {
         </table>
       </div>
       <div>
-        <h3>Price Trends</h3>
+        <h3>{t('farmerDashboard.priceTrends')}</h3>
         <select onChange={(e) => setSelectedItem(e.target.value)}>
-          <option value="">Select Item</option>
+          <option value="">{t('farmerDashboard.selectItem')}</option>
           {[...new Set(data.map(d => d.item))].map(item => (
             <option key={item} value={item}>{item}</option>
           ))}
@@ -101,16 +103,16 @@ const FarmerDashboard = () => {
         {selectedItem && <Line data={getChartData(selectedItem)} />}
       </div>
       <div>
-        <h3>Weather</h3>
+        <h3>{t('farmerDashboard.weather')}</h3>
         {weather.main && (
-          <p>Temperature: {weather.main.temp}°C, Humidity: {weather.main.humidity}%</p>
+          <p>{t('farmerDashboard.temperature')}: {weather.main.temp}°C, {t('farmerDashboard.humidity')}: {weather.main.humidity}%</p>
         )}
       </div>
       <div>
-        <h3>Advice</h3>
+        <h3>{t('farmerDashboard.advice')}</h3>
         <p>{advice}</p>
       </div>
-      <a href="/forum">Go to Forum</a>
+      <a href="/forum">{t('farmerDashboard.forumLink')}</a>
     </div>
   );
 };

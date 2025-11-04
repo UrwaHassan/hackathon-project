@@ -1,0 +1,56 @@
+{
+  "login": {
+    "title": "لاگ ان",
+    "username": "صارف نام",
+    "password": "پاس ورڈ",
+    "button": "لاگ ان",
+    "registerLink": "رجسٹر",
+    "failed": "لاگ ان ناکام"
+  },
+  "register": {
+    "title": "رجسٹر",
+    "username": "صارف نام",
+    "password": "پاس ورڈ",
+    "role": "کردار",
+    "farmer": "کسان",
+    "admin": "ایڈمن",
+    "button": "رجسٹر",
+    "failed": "رجسٹریشن ناکام"
+  },
+  "languageModal": {
+    "title": "زبان منتخب کریں",
+    "english": "انگریزی",
+    "urdu": "اردو",
+    "select": "منتخب کریں"
+  },
+  "adminDashboard": {
+    "title": "ایڈمن ڈیش بورڈ",
+    "item": "آئٹم",
+    "price": "قیمت",
+    "region": "علاقہ",
+    "addButton": "ڈیٹا شامل کریں",
+    "delete": "حذف کریں"
+  },
+  "farmerDashboard": {
+    "title": "کسان ڈیش بورڈ",
+    "marketData": "مارکیٹ ڈیٹا",
+    "priceTrends": "قیمت کے رجحانات",
+    "selectItem": "آئٹم منتخب کریں",
+    "weather": "موسم",
+    "temperature": "درجہ حرارت",
+    "humidity": "نمی",
+    "advice": "مشورہ",
+    "forumLink": "فورم پر جائیں"
+  },
+  "forum": {
+    "title": "کمیونٹی فورم",
+    "postTitle": "عنوان",
+    "content": "مواد",
+    "postButton": "پوسٹ",
+    "by": "بذریعہ",
+    "viewComments": "تبصرے دیکھیں",
+    "comments": "تبصرے",
+    "commentPlaceholder": "تبصرہ",
+    "commentButton": "تبصرہ"
+  }
+}

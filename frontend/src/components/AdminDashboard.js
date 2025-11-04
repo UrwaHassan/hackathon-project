@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useTranslation } from 'react-i18next';
 
 const AdminDashboard = () => {
   const [data, setData] = useState([]);
   const [item, setItem] = useState('');
   const [price, setPrice] = useState('');
   const [region, setRegion] = useState('');
+  const { t } = useTranslation();
 
   const token = localStorage.getItem('token');
 
@@ -52,19 +54,19 @@ const AdminDashboard = () => {
 
   return (
     <div>
-      <h2>Admin Dashboard</h2>
+      <h2>{t('adminDashboard.title')}</h2>
       <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="Item" value={item} onChange={(e) => setItem(e.target.value)} required />
-        <input type="number" placeholder="Price" value={price} onChange={(e) => setPrice(e.target.value)} required />
-        <input type="text" placeholder="Region" value={region} onChange={(e) => setRegion(e.target.value)} required />
-        <button type="submit">Add Data</button>
+        <input type="text" placeholder={t('adminDashboard.item')} value={item} onChange={(e) => setItem(e.target.value)} required />
+        <input type="number" placeholder={t('adminDashboard.price')} value={price} onChange={(e) => setPrice(e.target.value)} required />
+        <input type="text" placeholder={t('adminDashboard.region')} value={region} onChange={(e) => setRegion(e.target.value)} required />
+        <button type="submit">{t('adminDashboard.addButton')}</button>
       </form>
       <table>
         <thead>
           <tr>
-            <th>Item</th>
-            <th>Price</th>
-            <th>Region</th>
+            <th>{t('adminDashboard.item')}</th>
+            <th>{t('adminDashboard.price')}</th>
+            <th>{t('adminDashboard.region')}</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -74,7 +76,7 @@ const AdminDashboard = () => {
               <td>{d.item}</td>
               <td>{d.price}</td>
               <td>{d.region}</td>
-              <td><button onClick={() => handleDelete(d._id)}>Delete</button></td>
+              <td><button onClick={() => handleDelete(d._id)}>{t('adminDashboard.delete')}</button></td>
             </tr>
           ))}
         </tbody>
